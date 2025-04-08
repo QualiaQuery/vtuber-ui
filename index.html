@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VTuber UI Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #2c2c54, #3d3d70);
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+    .section {
+      padding: 2rem 1rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .item {
+      background-color: #1f1f2e;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .item h3 {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .item a {
+      color: #78aaff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1a1a1a;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .sns {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .sns a {
+      margin: 0 0.5rem;
+      color: #78aaff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VTuber UI Gallery</h1>
+    <p>配信画面やオーバーレイのUI素材を紹介しています</p>
+  </header>
+
+  <section class="section">
+    <h2>商品ギャラリー</h2>
+    <div class="gallery">
+      <div class="item">
+        <img src="https://via.placeholder.com/400x250.png?text=Sample+UI+1" alt="Sample UI 1">
+        <h3>可愛い系オーバーレイ</h3>
+        <p><a href="#">BOOTHで見る</a></p>
+      </div>
+      <div class="item">
+        <img src="https://via.placeholder.com/400x250.png?text=Sample+UI+2" alt="Sample UI 2">
+        <h3>シンプルモダン配信枠</h3>
+        <p><a href="#">BOOTHで見る</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>プロフィール</h2>
+    <p>VTuber向けの配信画面やUI素材をデザインしています。ご依頼や販売情報はBOOTHやSNSをご覧ください。</p>
+    <div class="sns">
+      <a href="#">X (Twitter)</a>
+      <a href="#">BOOTH</a>
+      <a href="#">YouTube</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 VTuber UI Creator
+  </footer>
+</body>
+</html>
