@@ -1,183 +1,137 @@
-/* 全体のリセットと基本設定 */
-* {
+/* 全体の基本スタイル */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  color: #e0e0e0;
-  line-height: 1.6;
-  padding: 0;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to bottom right, #1a0033, #250052);
+  color: #fff;
 }
 
 /* ヘッダー */
 header {
-  background-color: #0d0d0d;
-  padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid #00ffe0;
-  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
+  background-color: #000;
+  padding: 20px 40px;
+  border-bottom: 2px solid #00ffff;
 }
 
-header h1 {
-  font-size: 1.8rem;
-  color: #00ffe0;
-  text-shadow: 0 0 5px #00ffe0;
+/* ロゴ（左上） */
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
+/* ナビゲーション */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  position: relative;
-  padding-bottom: 3px;
+  transition: color 0.3s;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background: #00ffe0;
-  transition: 0.3s ease;
+nav a:hover {
+  color: #00ffff;
 }
 
-nav a:hover::after {
-  width: 100%;
+/* ヒーローセクション（Vtuber向け紹介） */
+.hero {
+  padding: 100px 40px 60px;
+  text-align: center;
+  background: radial-gradient(circle, #250052 0%, #120031 100%);
 }
 
-/* メインコンテンツ */
-main {
-  padding: 3rem 2rem;
-  max-width: 1200px;
-  margin: auto;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
-/* セクションタイトル */
-h2 {
-  color: #00ffe0;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid #00ffe0;
+.hero p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+}
+
+.cta {
   display: inline-block;
-  padding-bottom: 0.3rem;
-  text-shadow: 0 0 6px #00ffe0;
+  padding: 12px 24px;
+  background-color: #00ffff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  transition: background-color 0.3s;
 }
 
-/* 特徴セクション横並び */
+.cta:hover {
+  background-color: #00dddd;
+}
+
+/* 特徴セクション */
+#メリット {
+  padding: 80px 40px;
+  background: #1a0033;
+}
+
+#メリット h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+  margin-bottom: 50px;
+}
+
+/* 特徴項目を横並びにする */
 .features {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  justify-content: space-around;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* 各特徴の見た目 */
 .feature-item {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  flex: 1 1 30%;
-  min-width: 250px;
-  border: 2px solid #00ffe0;
-  box-shadow: 0 0 10px #00ffe0;
-  transition: transform 0.3s ease;
+  flex: 1 1 250px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00ffff55;
 }
 
-.feature-item:hover {
-  transform: translateY(-5px);
+.feature-item h3 {
+  color: #00ffff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
-/* お問い合わせフォーム */
-.contact-form {
-  background-color: rgba(20, 20, 20, 0.7);
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 2px solid #00ffe0;
-  max-width: 600px;
-  margin: auto;
-  box-shadow: 0 0 12px #00ffe0;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #00ffe0;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1.2rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: #1e1e1e;
-  color: #ffffff;
-}
-
-.contact-form button {
-  background: #00ffe0;
-  color: #000000;
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: #00cccc;
+.feature-item p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* フッター */
 footer {
+  background-color: #000;
+  color: #aaa;
   text-align: center;
-  padding: 2rem;
-  background-color: #0d0d0d;
-  color: #888;
-  border-top: 2px solid #00ffe0;
-  margin-top: 4rem;
-  font-size: 0.9rem;
-}
-
-/* アニメーション */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-  .features {
-    flex-direction: column;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
+  padding: 20px 0;
+  border-top: 2px solid #00ffff;
 }
