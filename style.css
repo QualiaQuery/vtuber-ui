@@ -1,14 +1,4 @@
-/* Google Fonts: Orbitron for cyberpunk style */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
-
-:root {
-  --primary-color: #0ff;
-  --secondary-color: #111;
-  --accent-color: #f0f;
-  --bg-gradient: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  --font-color: #fff;
-}
-
+/* 全体リセットとフォント設定 */
 * {
   margin: 0;
   padding: 0;
@@ -17,183 +7,119 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
-  background: var(--bg-gradient);
-  color: var(--font-color);
+  background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+  color: #ffffff;
+  padding: 20px;
   line-height: 1.6;
-  min-height: 100vh;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in;
 }
 
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-a:hover {
-  color: var(--accent-color);
+/* ネオン効果の見出し */
+h1, h2, h3 {
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+  margin-bottom: 1rem;
 }
 
-/* Header */
-.header {
+/* 見出しネオン特化 */
+h1.logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 25px #00ffff;
+}
+
+/* ナビゲーション */
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 20px var(--primary-color);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background-color: rgba(0,0,0,0.8);
+  padding: 10px 20px;
+  margin-bottom: 2rem;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  text-shadow: 0 0 10px var(--primary-color);
-}
-
-.nav ul {
+nav ul {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
 }
-.nav ul li a {
-  font-size: 1rem;
+
+nav ul li a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-/* Main Sections */
-.hero-section {
-  text-align: center;
-  padding: 5rem 2rem 2rem;
+nav ul li a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff;
 }
-.hero-section h1 {
-  font-size: 2.5rem;
+
+/* セクション */
+section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #00ffff;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
-  color: var(--primary-color);
-}
-.hero-section p {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.1rem;
 }
 
-/* Features */
+/* 特徴横並び */
 .features {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
-  padding: 3rem 2rem;
 }
+
 .feature-box {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 1rem;
-  width: 280px;
-  border: 1px solid var(--primary-color);
-  box-shadow: 0 0 10px var(--primary-color);
-  transition: transform 0.3s ease;
-}
-.feature-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px var(--accent-color);
-}
-.feature-box h3 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
+  flex: 1 1 250px;
+  background-color: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff55;
 }
 
-/* Section Titles */
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-}
-
-/* Fade-in Animation */
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
-}
+/* アニメーション */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Design List */
-.design-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  padding: 2rem;
+/* リンク */
+a {
+  color: #00ffff;
 }
-.design-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--primary-color);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  width: 280px;
+
+a:hover {
+  color: #ff00ff;
+  text-decoration: underline;
+}
+
+/* フッター */
+footer {
   text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 10px var(--primary-color);
-}
-.design-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 20px var(--accent-color);
-}
-
-/* Contact Form */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  box-shadow: 0 0 10px var(--primary-color);
-}
-.contact-form label {
-  font-weight: bold;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 0.8rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: #1a1a1a;
-  color: white;
-}
-.contact-form button {
-  background: var(--primary-color);
-  color: black;
-  border: none;
-  padding: 1rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.contact-form button:hover {
-  background: #00e6e6;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1rem;
   margin-top: 3rem;
-  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid #00ffff;
+  padding-top: 1rem;
   font-size: 0.9rem;
   color: #ccc;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
